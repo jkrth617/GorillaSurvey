@@ -1,0 +1,8 @@
+<h1> List of Surveys </h1>
+  <ul class = 'surveys'>
+    <% @surveys.each do |survey| %>
+      <li>
+        <ul><a href=" "><%= survey.title %></a></ul>
+      </li>
+    <% end %>
+  </ul>
