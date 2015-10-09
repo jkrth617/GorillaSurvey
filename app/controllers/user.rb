@@ -3,9 +3,10 @@ get '/signup' do
   erb :'user/signup'
 end
 
-post '/signup/' do
+post '/signup' do
   @user = User.new(params[:user])
-  if user.save
+  # binding.pry
+  if @user.save
     session[:user_id] = @user.id
     redirect "/"
   else
@@ -15,21 +16,22 @@ post '/signup/' do
 end
 
 get '/login' do
+  @user = User.new
   erb :'user/login'
 end
 
 post '/login' do
-  user = User.find_by(user_name: params[:user_name])
-  if user && user.authenticate(params[:password])
-    session[:user_id] = user.id
+  @user = User.find_by(user_name: params[:user_name])
+  if @user && @user.authenticate(params[:password])
+    session[:user_id] = @user.id
     redirect "/"
   else
-    @errors = user.errors.full_messages
+    @errors = @user.errors.full_messages
     erb :'user/login'
   end
 end
 
-get 'logout' do
+get '/logout' do
   session.clear
   redirect "/"
 end
@@ -38,3 +40,9 @@ get '/users/:id' do |user_id|
   @user = User.find(user_id)
   erb :'user/show'
 end
+
+
+# get '/' do
+#   @user = User.find(session[:user_id])
+#   @user.user_name
+# end
