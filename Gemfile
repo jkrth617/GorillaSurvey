@@ -11,6 +11,8 @@ gem 'activesupport'
 gem 'activerecord'
 gem 'bcrypt-ruby'
 
+gem 'bcrypt'
+
 gem 'sinatra-flash'
 
 gem 'pry'
