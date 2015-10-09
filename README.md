@@ -19,17 +19,25 @@ Welcome to our team! The members are Jake R, Laurhens D, Sarah O, and Jason W! W
 
 ---
 
+###Schema
+
+![schema](imgs/schema_gorilla.png)
+
+---
+
+###Wireframe
+
+![wireframe](imgs/gorilla_wireframe.jpg)
+
+---
 
 ###How We Did It
-
 
 ---
 
 ###Technologies Used
 
-
 ---
 
 ###Learning Experience
 
- b
