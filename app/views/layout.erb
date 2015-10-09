@@ -24,13 +24,16 @@
       |
       <a href="/logout">Logout</a>
     <% else %>
-      <a href="/singup">make an account</a>
+      <h1>Hey, sign in to view our sick content</h1>
+      <h2>
+      <a href="/signup">make an account</a>
       |
       <a href="/login">sign in</a>
+      </h2>
     <% end %>
+      <div id="content">
+        <%= yield %>
+      </div>
   </div>
-<div id="content">
-  <%= yield %>
-</div>
 </body>
 </html>
