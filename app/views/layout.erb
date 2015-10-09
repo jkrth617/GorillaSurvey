@@ -18,6 +18,17 @@
   <title></title>
 </head>
 <body>
+  <div id = "user-bar">
+    <% if session[:user_id]%>
+      <a href="/users/<%= session[:user_id] %>"><%= User.find(session[:user_id]).user_name %></a>
+      |
+      <a href="/logout">Logout</a>
+    <% else %>
+      <a href="/singup">make an account</a>
+      |
+      <a href="/login">sign in</a>
+    <% end %>
+  </div>
 <div id="content">
   <%= yield %>
 </div>
