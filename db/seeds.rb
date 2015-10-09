@@ -1,13 +1,13 @@
 
-LD = User.new(user_name: "LD", email: Faker::Internet.email)
-Jake = User.new(user_name: "Jake", email: Faker::Internet.email)
-Sarah = User.new(user_name: "Sarah", email: Faker::Internet.email)
-Jason = User.new(user_name: "Jason", email: Faker::Internet.email)
+ld = User.create(user_name: "LD", email: Faker::Internet.email)
+jake = User.create(user_name: "Jake", email: Faker::Internet.email)
+sarah = User.create(user_name: "Sarah", email: Faker::Internet.email)
+jason = User.create(user_name: "Jason", email: Faker::Internet.email)
 
-users = [LD, Jake, Sarah, Jason]
+users = [ld, jake, sarah, jason]
 
 users.each do |user|
-  user.password_hash = "yolo"
+  user.password_digest = "yolo"
   user.save
 
   2.times do
