@@ -11,9 +11,9 @@
 
 <form name = "signup" method="POST" action="/signup">
   <label for = "email">Email</label>
-  <input id = "email" type = "text" name = "user[email]" placeholder = "jsmith123@example.com">
+  <input id = "email" type = "text" name = "user[email]" placeholder = "jsmith123@example.com" value = "<%= @user.email %>">
   <label for = "user_name">User_name</label>
-  <input id = "user_name" type = "text" name = "user[user_name]" placeholder = "coolkid6">
+  <input id = "user_name" type = "text" name = "user[user_name]" placeholder = "coolkid6" value = "<%= @user.user_name %>">
   <label for = "password">Password</label>
   <input id = "password" type = "password" name = "user[password_digest]" placeholder = "password">
 
