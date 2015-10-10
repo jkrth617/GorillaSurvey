@@ -24,6 +24,8 @@
     <% if session[:user_id]%>
       <a href="/users/<%= session[:user_id] %>"><%= User.find(session[:user_id]).user_name %></a>
       |
+      <a href="/surveys/new">New Survey</a>
+      |
       <a href="/logout">Logout</a>
     <% else %>
       <h1>Hey, sign in to view our sick content</h1>
