@@ -1,1 +1,16 @@
-<h1>show</h1>
+<h2> Survey: <i><%= @survey.title %></h2>
+
+<form action="/survey/<%= @survey.id %>" method="post">
+
+  <ol>
+    <% index = 0 %>
+    <% @survey.questions.each do |question| %>
+      <li> <%= question.name%> </li>
+      <ul><% question.choices.each do |choice| %></ul>
+          <input type="radio" name="choices[:id]" value="<%= choice.id %>"> <%=choice.body %><br>
+        <% end %>
+    <% end %>
+  </ol>
+
+  <input type="submit" value="Go Bananas!">
+</form>
