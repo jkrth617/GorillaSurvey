@@ -29,3 +29,17 @@ end
 post '/surveys/:id' do |survey_id|
   "hi there this would be where a user takes the survey"
 end
+
+get '/surveys/delete/:id' do
+  @survey = Survey.find(params[:id])
+  erb :'survey/delete'
+end
+
+delete '/surveys/:id' do
+  survey = Survey.find(params[:id])
+  survey.destroy
+  redirect '/surveys'
+end
+
+
+
