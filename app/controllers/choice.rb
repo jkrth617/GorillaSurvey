@@ -4,7 +4,7 @@ get '/questions/:id/choice/new' do |q_id|
   erb :'choice/new'
 end
 
-post '/questions/:id/choice/new' do |q_id|
+post '/questions/:id/choice' do |q_id|
   question = Question.find(q_id)
   @choice = question.choices.new(params[:choice])#make sure this alligns with the erb's form
   if @choice.save
