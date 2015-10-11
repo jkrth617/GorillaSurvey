@@ -4,8 +4,9 @@
     <% index = 0 %>
     <% @survey.questions.each do |question| %>
       <li> <%= question.name%> </li>
+      <% index += 1 %>
       <ul><% question.choices.each do |choice| %></ul>
-          <input type="radio" name="choices[:id]" value="<%= choice.id %>"> <%=choice.body %><br>
+          <input type="radio" name="choices[:<%= index %>]" value="<%= choice.id %>"> <%=choice.body %><br>
         <% end %>
     <% end %>
   </ol>
