@@ -22,9 +22,3 @@ post '/surveys' do
       flash[:message] = "Survey not made!"
       erb :'survey/new'
 end
-
-
-
-
-
-
