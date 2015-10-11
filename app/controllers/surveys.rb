@@ -4,6 +4,7 @@ get '/surveys' do
 end
 
 get '/surveys/new' do
+  @survey = Survey.new
   erb :'survey/new'
 end
 
@@ -13,7 +14,8 @@ get '/surveys/:id' do
 end
 
 post '/surveys' do
-  @survey = Survey.find(params[:survey])
+  @survey = Survey.new(params[:survey])
+  @survey.user_id = session[:user_id]
     if @survey.save
       flash[:message] = "Survey was saved!"
       redirect '/surveys'
