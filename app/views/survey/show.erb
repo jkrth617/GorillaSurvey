@@ -1,17 +1,30 @@
 <h2> Survey: <%= @survey.title %></h2>
-<form action="/surveys/<%= @survey.id %>" method="post">
-  <ol>
-    <% index = 0 %>
-    <% @survey.questions.each do |question| %>
-      <li> <%= question.name%> </li>
-      <ul><% question.choices.each do |choice| %></ul>
-          <input type="radio" name="choices[:id]" value="<%= choice.id %>"> <%=choice.body %><br>
+
+  <% if session[:user_id] == @survey.user.id %>
+    <ol>
+      <% index = 0 %>
+      <% @survey.questions.each do |question| %>
+        <li> <%= question.name%> </li>
+        <ul><% question.choices.each do |choice| %></ul>
+            <p><%= choice.body %> | selected <%= choice.times_selected %> time(s) or <%= choice.percentage_selected %></p>
+          <% end %>
+      <% end %>
+    </ol>
+  <% else %>
+    <form action="/surveys/<%= @survey.id %>" method="post">
+      <ol>
+        <% index = 0 %>
+        <% @survey.questions.each do |question| %>
+          <li> <%= question.name%> </li>
+          <ul><% question.choices.each do |choice| %></ul>
+              <input type="radio" name="choices[:id]" value="<%= choice.id %>"> <%=choice.body %><br>
+            <% end %>
         <% end %>
-    <% end %>
-  </ol>
+      </ol>
 
-  <input type="submit" value="Go Bananas!">
+      <input type="submit" value="Go Bananas!">
 
-</form>
+    </form>
+  <% end %>
 
 <a href="/surveys">back to surveys</a>
