@@ -18,7 +18,7 @@ post '/surveys' do
   @survey.user_id = session[:user_id]
     if @survey.save
       flash[:message] = "Survey was saved!"
-      redirect '/surveys'
+      redirect "/surveys/#{@survey.id}/questions/new"
     else
       @errors = @survey.errors.full_messages
       flash[:message] = "Survey not made!"
