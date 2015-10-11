@@ -1,0 +1,21 @@
+<h3>Make an option for selection</h3>
+
+<% if @errors %>
+  <h6>Failed to save. Errors:</h6>
+  <ul>
+  <% @errors.each do |message| %>
+    <li> <%= message %> </li>
+  <% end %>
+  </ul>
+<% end %>
+
+<form id = "new_choice_form" method = "post" action = "/questions/<%= @question.id %>/choices">
+  <label for = "body">option</label>
+  <input id = "body" type = "text" name = "choice[body]" value = "<%= @choice.body %>" placeholder = "option">
+
+  <input type = "submit" value = "Save and add another Choice">
+</form>
+
+<form id = "question_complete_button" method = "get" action = "/surveys/<%= @question.survey_id %>/questions/new">
+  <input type = "submit" value = "finish this question">
+</form>
