@@ -1,1 +1,16 @@
-<h1>new</h1>
+<h1>Survey creation</h1>
+
+<% if @errors %>
+  <h6>Failed to save. Errors:</h6>
+  <ul>
+  <% @errors.each do |message| %>
+    <li> <%= message %> </li>
+  <% end %>
+  </ul>
+<% end %>
+
+<form id = "new_survey_form" method = "post" action = "/surveys">
+  <label for = "title" type = "text">Title</label>
+  <input id = "title" type = "test" name = "survey[title]" value = <%= @survey.title %> placeholder = "Survey Title">
+  <input type = "submit" value "Save and Continue">
+</form>
