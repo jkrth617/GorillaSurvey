@@ -13,13 +13,9 @@ get '/surveys/:id' do
 end
 
 post '/surveys' do
-  @survey = Survey.find(params[:survey])
-    if @survey.save
-      redirect '/surveys'
-    else
-      erb :'survey/new'
-  end
+
 end
+
 
 
 
