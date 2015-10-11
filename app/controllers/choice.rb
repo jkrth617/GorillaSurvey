@@ -13,7 +13,12 @@ post '/questions/:id/choices' do |q_id|
   @choice = @question.choices.new(params[:choice])#make sure this alligns with the erb's form
   if @choice.save
     flash[:message] = "choice saved!!"
-    redirect "/questions/#{@question.id}/choices/new"
+    if request.xhr?
+      @choice = Choice.new
+      erb :'choice/_new-form', layout: false, locals: {question: @question, choice: @choice}
+    else
+      redirect "/questions/#{@question.id}/choices/new"
+    end
   else
     @errors = @choice.errors.full_messages
     erb :'choice/new'

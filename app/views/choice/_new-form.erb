@@ -3,9 +3,5 @@
   <label for = "body">option</label>
   <input id = "body" type = "text" name = "choice[body]" value = "<%= choice.body %>" placeholder = "option">
 
-  <input type = "submit" value = "Save and add another Choice">
-</form>
-
-<form id = "question_complete_button" method = "get" action = "/surveys/<%= @question.survey_id %>/questions/new">
-  <input type = "submit" value = "finish this question">
+  <input class = "choice-save" type = "submit" value = "Save and add another Choice">
 </form>

@@ -16,4 +16,8 @@
 </form>
 
 <div id = "question-containter"></div>
+<div id = "save-all">
+  <%= erb :'question/_save-form', layout: false, locals: {survey_id: session[:survey_id]}%>
+</div>
+
 <!-- the submit button looks weird. its very small... -->
