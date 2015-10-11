@@ -12,6 +12,7 @@ get '/surveys/:id' do
   erb :'survey/show'
 end
 
+
 post '/surveys' do
   @survey = Survey.find(params[:survey])
     if @survey.save
