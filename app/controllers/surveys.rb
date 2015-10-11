@@ -22,10 +22,5 @@ post '/surveys' do
 
 post '/surveys/new' do
 
+
 end
-
-
-
-
-
-
