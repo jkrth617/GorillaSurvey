@@ -1,0 +1,7 @@
+
+<form id = "new_choice_form" method = "post" action = "/questions/<%= question.id %>/choices">
+  <label for = "body">option</label>
+  <input id = "body" type = "text" name = "choice[body]" value = "<%= choice.body %>" placeholder = "option">
+
+  <input class = "choice-save" type = "submit" value = "Save and add another Choice">
+</form>

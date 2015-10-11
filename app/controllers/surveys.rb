@@ -16,6 +16,7 @@ end
 post '/surveys' do
   @survey = Survey.new(params[:survey])
   @survey.user_id = session[:user_id]
+  # session[:survey_id] = @survey.id #clear this out later
     if @survey.save
       flash[:message] = "Survey was saved!"
       redirect "/surveys/#{@survey.id}/questions/new"

@@ -9,12 +9,7 @@
   </ul>
 <% end %>
 
-<form id = "new_choice_form" method = "post" action = "/questions/<%= @question.id %>/choices">
-  <label for = "body">option</label>
-  <input id = "body" type = "text" name = "choice[body]" value = "<%= @choice.body %>" placeholder = "option">
-
-  <input type = "submit" value = "Save and add another Choice">
-</form>
+<%= erb :'choice/_new-form', layout: false, locals: {question: @question, choice: @choice} %>
 
 <form id = "question_complete_button" method = "get" action = "/surveys/<%= @question.survey_id %>/questions/new">
   <input type = "submit" value = "finish this question">

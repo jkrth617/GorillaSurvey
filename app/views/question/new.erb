@@ -9,12 +9,7 @@
   </ul>
 <% end %>
 
-<form id = "new_question_form" method = "post" action = "/surveys/<%= @survey_id %>/questions">
-  <label for = "content" type = "text">Question?</label>
-  <input id = "content" type = "text" name = "question[name]" value = "<%= @question.name %>" placeholder="what would you like to ask?">
-  <input type = "submit" value = "add some choices">
-</form>
+<%= erb :'question/_new-form', layout: false, locals: {question: @question, survey_id: @survey_id}%>
 
-<form id = "survey_complete_button" method = "get" action = "/surveys/<%= @survey_id %>">
-  <input type = "submit" value = "Finished">
-</form>
+<%= erb :'question/_save-form', layout: false, locals: {survey_id: @survey_id}%>
+

@@ -1,7 +1,11 @@
 get '/surveys/:id/questions/new' do |survey_id|
   @question = Question.new
   @survey_id = survey_id
-  erb :'question/new'
+  if request.xhr?
+    erb :'question/_new-form', layout: false, locals: {question: @question, survey_id: @survey_id}
+  else
+    erb :'question/new'
+  end
 end
 
 post '/surveys/:id/questions' do |survey_id|
