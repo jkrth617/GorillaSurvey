@@ -21,4 +21,5 @@ post '/surveys' do
       @errors = @survey.errors.full_messages
       flash[:message] = "Survey not made!"
       erb :'survey/new'
+    end
 end
