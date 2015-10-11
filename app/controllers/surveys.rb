@@ -13,9 +13,16 @@ get '/surveys/:id' do
 end
 
 post '/surveys' do
-
+  @survey = Survey.find(params[:survey])
+    if @survey.save
+      flash[:message] = "Survey was saved!"
+      redirect '/surveys'
+    else
+      @errors = @survey.errors.full_messages
+      flash[:message] = "Survey not made!"
+      erb :'survey/new'
+    end
 end
-
 
 
 
