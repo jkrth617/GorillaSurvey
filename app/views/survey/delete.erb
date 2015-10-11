@@ -1,0 +1,12 @@
+<h1>Delete the Entry</h1>
+
+<main class="container">
+  <form method="post" action="/surveys/<%= @survey.id %>">
+    <input type="hidden" name="_method" value="delete">
+    <p>Are you sure you want to delete: </p>
+    <%= @survey.title %>
+    <p> ? </p>
+    <a href = "/">Cancel</a>
+    <input type="submit" value="Delete Survey" class="button">
+  </form>
+</main>

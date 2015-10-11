@@ -5,5 +5,6 @@
 <ol>
   <% @user.surveys.each do |survey| %>
     <li><a href="#">survey.title</a> DONT KNOW THE SURVEY ROUTE</li>
+    <li> <a href="<%= "/surveys/delete/#{survey.id}" %> ">Delete</a></li>
   <% end %>
 </ol>
