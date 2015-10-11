@@ -12,7 +12,7 @@
 <form id = "new_survey_form" method = "post" action = "/surveys">
   <label for = "title" type = "text">Title</label>
   <input id = "title" type = "text" name = "survey[title]" value = "<%= @survey.title %>" placeholder = "Survey Title">
-  <input type = "submit" value "Save and Continue">
+  <input id = "survey-title-submit" type = "submit" value "Save and Continue">
 </form>
 
 <div id = "question-containter"></div>

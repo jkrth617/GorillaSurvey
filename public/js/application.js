@@ -14,6 +14,7 @@ $(document).ready(function() {
     }).done(function(response){
       // debugger;
       $('#question-containter').append(response);
+      $('#survey-title-submit').hide();
       $('#save-all').show();
     })
     // no fail and also no hide. now whenever you click that button another question will be appended to the bottom
