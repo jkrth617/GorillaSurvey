@@ -14,8 +14,10 @@ $(document).ready(function() {
     }).done(function(response){
       // debugger;
       $('#question-containter').append(response);
-      $('#survey-title-submit').hide();
+      // $('#survey-title-submit').hide();
       $('#save-all').show();
+      // $('#add-question').html($('#survey-title-submit'));
+
     })
     // no fail and also no hide. now whenever you click that button another question will be appended to the bottom
   })
@@ -34,6 +36,19 @@ $(document).ready(function() {
       $('.question-save').hide();
     }).fail(function(deffered){
 
+    })
+  })
+
+$('#question-containter').on('submit', '#add-question-form', function(event){
+    event.preventDefault();
+    var method = $(this).attr('method');
+    var target_url = $(this).attr('action');
+    $.ajax({
+      type: method,
+      url: target_url,
+      data: form_data
+    }).done(function(response){
+      $('#question-containter').append(response)
     })
   })
 
