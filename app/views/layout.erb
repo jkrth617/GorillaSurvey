@@ -40,6 +40,10 @@
     <img src="/gorilla_banner.png" alt="gorilla banner" />
   </div>
       <div id="content">
+        <% if flash[:message] %>
+          <%= flash[:message] %>
+        <% end %>
+
         <%= yield %>
       </div>
   </div>
