@@ -15,6 +15,7 @@ end
 post '/surveys' do
   @survey = Survey.find(params[:survey])
     if @survey.save
+
       flash[:message] = "Survey was saved!"
       redirect '/surveys'
     else
@@ -23,6 +24,5 @@ post '/surveys' do
       erb :'survey/new'
     end
 end
-
 
 
