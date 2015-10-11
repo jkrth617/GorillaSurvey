@@ -15,12 +15,16 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
+  <link href='https://fonts.googleapis.com/css?family=Nunito|Chewy' rel='stylesheet' type='text/css'>
+
   <title></title>
 </head>
 <body>
   <div id = "user-bar">
     <% if session[:user_id]%>
       <a href="/users/<%= session[:user_id] %>"><%= User.find(session[:user_id]).user_name %></a>
+      |
+      <a href="/surveys/new">New Survey</a>
       |
       <a href="/logout">Logout</a>
     <% else %>
@@ -31,6 +35,10 @@
       <a href="/login">sign in</a>
       </h2>
     <% end %>
+  </div>
+  <div id = "banner">
+    <img src="/gorilla_banner.png" alt="gorilla banner" />
+  </div>
       <div id="content">
         <%= yield %>
       </div>

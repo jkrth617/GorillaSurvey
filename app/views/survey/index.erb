@@ -1,7 +1,9 @@
-<h1> List of Surveys </h1>
   <ul class = 'surveys'>
+    <h1> List of Surveys </h1>
     <% @surveys.each do |survey| %>
     <p>hi from the each block</p>
       <li> <a href="#"><%= survey.title %></a> </li>
     <% end %>
   </ul>
+
+<a href="/surveys/new"> Stop monkeying around and write a survey! </a>

@@ -1,5 +1,5 @@
 /* CSS declarations go here */
-body {font-family: Vollkorn;
+body {font-family:'Nunito', sans-serif;;
     font-size: 160%;
     line-height: 160%;
     background-image: url("../jungly-background.jpg");
@@ -7,7 +7,7 @@ body {font-family: Vollkorn;
     background-size: cover;
 }
 
-h1, h2, h3, h4, h5, h6 {font-family: Georgia; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: #36AECC; font-style: italic; font-weight: 400;}
+h1, h2, h3, h4, h5, h6 {font-family: 'Chewy', cursive; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: #36AECC; font-style: italic; font-weight: 400;}
 h1 {font-size: 1.8em;}
 h2 {font-size: 1.6em;}
 h3 {font-size: 1.4em;}
@@ -71,4 +71,32 @@ code {
     line-height: 1.4em;
     margin-left: -1em;
     overflow: auto;
+}
+
+#user-bar{
+  background-color: #0CE831;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+#user-bar li {
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  color: white;
+  border-bottom: 1px solid #888;
+}
+
+#banner {
+  text-align: center;
+
+}
+
+.surveys {
+    color: white;
+    border: solid;
+    padding: 20px 0px 0px 40px;
+    background-color:green;
+    max-width: 80%;
 }
