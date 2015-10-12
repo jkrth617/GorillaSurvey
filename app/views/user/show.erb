@@ -2,9 +2,9 @@
 
 <h4>Here are all the surveys that you have made</h4>
 
-<ol>
+<ul>
   <% @user.surveys.each do |survey| %>
-    <li><a href="#">survey.title</a> DONT KNOW THE SURVEY ROUTE</li>
-    <li> <a href="<%= "/surveys/delete/#{survey.id}" %> ">Delete</a></li>
+    <li><a href="<%= "/surveys/#{survey.id}" %> "><%= survey.title %></a></li>
+     <a href="<%= "/surveys/delete/#{survey.id}" %> ">Delete</a>
   <% end %>
-</ol>
+</ul>
