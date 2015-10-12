@@ -40,7 +40,11 @@
     <% end %>
   </div>
   <div id = "banner">
+     <% if session[:user_id]%>
     <img src="/gorilla_banner.png" alt="gorilla banner" />
+    <% else %>
+    <img src="/gorilla_banner_2.png" alt="gorilla banner 2" />
+    <% end %>
   </div>
       <div id="content">
         <% if flash[:message] %>
