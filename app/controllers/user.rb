@@ -40,9 +40,3 @@ get '/users/:id' do |user_id|
   @user = User.find(user_id)
   erb :'user/show'
 end
-
-
-# get '/' do
-#   @user = User.find(session[:user_id])
-#   @user.user_name
-# end

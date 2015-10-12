@@ -5,6 +5,8 @@
 <ul>
   <% @user.surveys.each do |survey| %>
     <li><a href="<%= "/surveys/#{survey.id}" %> "><%= survey.title %></a></li>
-     <a href="<%= "/surveys/delete/#{survey.id}" %> ">Delete</a>
+    <ul class = "list-icon">
+    <li><a href="<%= "/surveys/delete/#{survey.id}" %> ">Delete</a></li>
+    </ul>
   <% end %>
 </ul>

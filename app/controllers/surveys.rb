@@ -4,13 +4,24 @@ get '/surveys' do
 end
 
 get '/surveys/new' do
-  @survey = Survey.new
-  erb :'survey/new'
+  if session[:user_id]
+    @survey = Survey.new
+    erb :'survey/new'
+  else
+    flash[:message] = "Please log in!"
+    redirect "/surveys"
+  end
 end
 
 get '/surveys/:id' do
   @survey = Survey.find(params[:id])
-  erb :'survey/show'
+  if session[:user_id]
+    erb :'survey/show'
+  else
+    @errors = @survey.errors.full_messages
+    flash[:message] = "Please log in!"
+    redirect "/surveys"
+  end
 end
 
 post '/surveys' do

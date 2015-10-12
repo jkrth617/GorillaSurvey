@@ -11,11 +11,10 @@
       <% end %>
     </ol>
   <% else %>
+    <h6> Please select an answer and move on until you finish! </h4>
       <ol id = "question-ol">
-      <% index = 0 %>
         <% @survey.questions.each do |question| %>
           <li> <%= question.name%> </li>
-          <% index += 1 %>
             <ul class = "answer-button"><% question.choices.each do |choice| %>
               <li><a class = "selection-button" href="/choices/<%= choice.id %>/responses"><%=choice.body %></a></li><br>
             <% end %>
@@ -24,5 +23,5 @@
       </ol>
  <% end %>
 
-  <button type="button"><a href="/surveys">Bananas Out!</a></button>
+  <button type="button"><a href="/surveys">Done? Bananas Out!</a></button>
 
