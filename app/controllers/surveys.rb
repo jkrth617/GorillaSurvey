@@ -10,7 +10,13 @@ end
 
 get '/surveys/:id' do
   @survey = Survey.find(params[:id])
-  erb :'survey/show'
+  if session[:user_id]
+    erb :'survey/show'
+  else
+    @errors = @survey.errors.full_messages
+    flash[:message] = "Please log in!"
+    redirect "/surveys"
+  end
 end
 
 post '/surveys' do

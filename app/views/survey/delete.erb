@@ -4,9 +4,9 @@
   <form method="post" action="/surveys/<%= @survey.id %>">
     <input type="hidden" name="_method" value="delete">
     <p>Are you sure you want to delete: </p>
-    <%= @survey.title %>
-    <p> ? </p>
+    <p><%= @survey.title %>?</p>
     <a href = "/">Cancel</a>
+    <p></p>
     <input type="submit" value="Delete Survey" class="button">
   </form>
 </main>

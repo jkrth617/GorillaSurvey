@@ -14,12 +14,11 @@
   <input id = "title" type = "text" name = "survey[title]" value = "<%= @survey.title %>" placeholder = "Survey Title">
   <input id = "survey-title-submit" type = "submit" value "Save and Continue">
 </form>
-
+<p></p>
 <div id = "question-containter"></div>
-
-<div id = "add-question">
-</div>
-
+<p></p>
+<div id = "add-question"></div>
+<p></p>
 <div id = "save-all">
   <%= erb :'question/_save-form', layout: false, locals: {survey_id: session[:survey_id]}%>
 </div>

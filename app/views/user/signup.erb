@@ -9,6 +9,7 @@
   </ul>
 <% end %>
 
+<div class = "form-wrapper">
 <form name = "signup" method="POST" action="/signup">
   <label for = "email">Email</label>
   <input id = "email" type = "text" name = "user[email]" placeholder = "jsmith123@example.com" value = "<%= @user.email %>">
@@ -16,6 +17,7 @@
   <input id = "user_name" type = "text" name = "user[user_name]" placeholder = "coolkid6" value = "<%= @user.user_name %>">
   <label for = "password">Password</label>
   <input id = "password" type = "password" name = "user[password]" placeholder = "password">
-
+  <p></p>
   <input type = "submit" value = "create account">
 </form>
+</div>

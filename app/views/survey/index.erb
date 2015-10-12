@@ -1,3 +1,12 @@
+<% if @errors %>
+<h4>You can't access the survey.</h4>
+  <ul>
+  <% @errors.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
+
 <ul class = 'surveys'>
     <h1> List of Surveys </h1>
     <% @surveys.each do |survey| %>
@@ -5,4 +14,4 @@
     <% end %>
 </ul>
 
-<a href="/surveys/new"> Stop monkeying around and write a survey! </a>
+<button type="button"><a href="/surveys/new">Stop monkeying around and write a survey!</a></button>

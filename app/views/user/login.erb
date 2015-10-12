@@ -9,11 +9,13 @@
   </ul>
 <% end %>
 
+<div class = "form-wrapper">
 <form name = "login" method="POST" action="/login">
   <label for = "user_name">User_name</label>
   <input id = "user_name" type = "text" name = "user_name" placeholder = "coolkid6" value = "<%= @user.user_name %>">
   <label for = "password">Password</label>
   <input id = "password" type = "password" name = "password" placeholder = "password">
-
+  <p></p>
   <input type = "submit" value = "Login">
 </form>
+</div>
