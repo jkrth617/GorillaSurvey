@@ -27,8 +27,18 @@ post '/surveys' do
     end
 end
 
-post '/surveys/:id' do |survey_id|
-  "hi there this would be where a user takes the survey"
+post '/surveys/:id' do
+  @survey = Survey.find(params[:id])
+  @response = Response.create(user_id: session[:id])
+  questions = @survey.questions
+  questions.each do |question|
+  choices = params[:choices]
+  choices.each_value do |value|
+    choice = Choice.find(value.to_i)
+    choice.save
+  end
+  redirect '/surveys'
+  # "hi there this would be where a user takes the survey"
 end
 
 get '/surveys/delete/:id' do
