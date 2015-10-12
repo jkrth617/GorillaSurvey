@@ -16,7 +16,6 @@ end
 post '/surveys' do
   @survey = Survey.new(params[:survey])
   @survey.user_id = session[:user_id]
-  # session[:survey_id] = @survey.id #clear this out later
     if @survey.save
       flash[:message] = "Survey was saved!"
       redirect "/surveys/#{@survey.id}/questions/new"
@@ -25,10 +24,6 @@ post '/surveys' do
       flash[:message] = "Survey not made!"
       erb :'survey/new'
     end
-end
-
-post '/surveys/:id' do |survey_id|
-  "hi there this would be where a user takes the survey"
 end
 
 get '/surveys/delete/:id' do
