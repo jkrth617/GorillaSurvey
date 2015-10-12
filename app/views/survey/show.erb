@@ -11,22 +11,18 @@
       <% end %>
     </ol>
   <% else %>
-
-    <form action="/surveys/<%= @survey.id %>" method="post">
-      <ol>
+      <ol id = "question-ol">
       <% index = 0 %>
         <% @survey.questions.each do |question| %>
           <li> <%= question.name%> </li>
           <% index += 1 %>
-          <ul><% question.choices.each do |choice| %></ul>
-              <input type="radio" name="question.id" value="<%= choice.id %>"> <%=choice.body %><br>
+            <ul class = "answer-button"><% question.choices.each do |choice| %>
+              <li><a class = "selection-button" href="/choices/<%= choice.id %>/responses"><%=choice.body %></a></li><br>
             <% end %>
+          </ul>
         <% end %>
       </ol>
+ <% end %>
 
-      <input type="submit" value="Go Bananas!">
+  <button type="button"><a href="/surveys">Bananas Out!</a></button>
 
-    </form>
-  <% end %>
-
-<a href="/surveys">back to surveys</a>

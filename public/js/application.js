@@ -63,4 +63,14 @@ $('#question-containter').on('submit', '#add-question-form', function(event){
     }).fail()
   })
 
+  $('.selection-button').on('click', function(event){
+    event.preventDefault();
+    $.ajax({
+      type: "get",
+      url: this.href
+    }).done(function(response){
+    $('#question-ol').append(response)
+    })
+  })
 });
+

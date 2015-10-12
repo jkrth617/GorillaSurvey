@@ -1,30 +1,7 @@
+User.create [{ user_name: "LD", password_digest: "yolo", email: "ld@gmail.com"}, {user_name: "Wangstation", password_digest: "yolo", email: "wangstation@gmail.com"}]
 
-ld = User.create(user_name: "LD", email: Faker::Internet.email)
-jake = User.create(user_name: "Jake", email: Faker::Internet.email)
-sarah = User.create(user_name: "Sarah", email: Faker::Internet.email)
-jason = User.create(user_name: "Jason", email: Faker::Internet.email)
+Survey.create [{ title: 'Why Jake is Awesome', user_id: 1}, { title: 'Seriously, Jake is great!', user_id: 2}]
 
-users = [ld, jake, sarah, jason]
+Question.create [{ name: 'Awesome?', survey_id: 1}, { name: 'He is rad, right?', survey_id: 1}, { name: 'Right? Right?', survey_id: 2}, { name: 'Follow Jake to the End?', survey_id: 2}]
 
-users.each do |user|
-  user.password_digest = "yolo"
-  user.save
-
-  2.times do
-    survey = Survey.create(title: Faker::Lorem.word, user_id: rand(1..4))
-    user.surveys << survey
-
-    3.times do
-      question = Question.create(name: Faker::Lorem.sentence + "?", survey_id: rand(1..2))
-      survey.questions << question
-
-      3.times do
-        choice = Choice.create(body: Faker::Lorem.word, question_id: rand(1..6))
-        question.choices << choice
-      end
-    end
-  end
-end
-
-# Survey.create [{ title: Faker::Lorem.word, user_id: 1}, { title: Faker::Lorem.word, user_id: 2},
-#   { title: Faker::Lorem.word, user_id: 3}, { title: Faker::Lorem.word, user_id: 4}]
+Choice.create [{ body: 'Yes', question_id: 1}, { body: 'No', question_id: 1},{ body: 'Yes', question_id: 2}, { body: 'No', question_id: 2}, { body: 'Yes', question_id: 3}, { body: "No", question_id: 3}, { body: "Yes", question_id: 4}, { body: "No", question_id: 4}]
